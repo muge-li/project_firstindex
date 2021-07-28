@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/index1.css">
+</head>
+<body>
+    <div class="container">
+        <div class="head clearfix">
+            <nav class="left">
+                <div class="none"></div>
+                <div class="naV">Lorem, ipsum.</div>
+                <div class="naV">Lorem, ipsum.</div>
+                <div class="naV">Lorem, ipsum.</div>
+            </nav>
+            <img class="tubiao" src="css/wenhao.png" alt="">
+            <input class="right" placeholder="Search">
+            </input>
+        </div>
+        <div class="center">
+            <nav class="Nav">
+                <img class="virtue" src="http://themes.kadencethemes.com/virtue/wp-content/uploads/2014/08/virtue_logox1.png" alt="图片失效">
+                <div>
+                        <a href="" class="right">Lorem</a>
+                    <ul class="submaue">
+                        <li>Lorem, ipsum.</li>
+                        <li>Adipisci, vel!</li>
+                    </ul>
+                </div>
+                <a href="" class="right">omnis.</a>
+                <a href="" class="right">molestiae.</a>
+                <a href="" class="right">Impedit</a>
+                <a href="" class="right">impedit.</a>
+                <a href="" class="right">Dignissimos</a>
+            </nav>
+            <div class="lunbo">
+                <div class="box">
+                    <img src="1.jpg" alt="">
+                    <img src="2.jpg" alt="">
+                    <img src="3.jpg" alt="">
+                </div>
+                <button><</button>
+                <button>></button>
+                <footer>
+                    <span class="active"></span>
+                    <span></span>
+                    <span></span>
+                </footer>
+            </div>
+        </div>
+        <div class="second clearfix">
+            <div class="first">Lorem, ipsum.</div>
+            <a href="">
+                <img src="http://themes.kadencethemes.com/virtue/wp-content/uploads/2013/07/paper_business_card_a-366x366.jpg" alt="">
+                <div class="word">Lorem, ipsum</div>
+            </a>
+            <a href="">
+                <img class="select" src="http://themes.kadencethemes.com/virtue/wp-content/uploads/2013/07/Paper_style_1a-366x366.jpg" alt="">
+                <div class="word word2">Lorem, ipsum</div>
+            </a>
+            <a href="">
+                <img src="http://themes.kadencethemes.com/virtue/wp-content/uploads/2013/07/photo-1416339684178-3a239570f315-366x366.jpg" alt="">
+                <div class="word word3">Lorem, ipsum</div>
+            </a>
+        </div>
+        <div class="third clearfix">
+        <div class="first">Lorem, ipsum.</div>
+        <div class="four">
+            <img class="imG" src="http://themes.kadencethemes.com/virtue/wp-content/uploads/2015/04/photo-1424746219973-8fe3bd07d8e3-270x270.jpg" alt="">
+            <a class="biao" href="">Lorem ipsum dolor sit.</a>
+            <img class="Img" src="css/three.png" alt="">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint vero nemo, ad ullam laborum libero, dolorem rem corporis eveniet repellendus amet dolore. <a href="">READ MORE</a></p>
+            <div class="Div"><div class="diV">13</div> <div class="dIv">JAN 2014</div></div> 
+        </div>
+        <div class="four fourz">
+            <img class="imG" src="http://themes.kadencethemes.com/virtue/wp-content/uploads/2013/07/ocean_02-270x270.jpg" alt="">
+            <a class="biao" href="">Lorem ipsum dolor sit.</a>
+            <img class="Img" src="css/three.png" alt="">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint vero nemo, ad ullam laborum libero, dolorem rem corporis eveniet repellendus amet dolore. <a href="">READ MORE</a></p>
+            <div class="Div"><div class="diV">29</div> <div class="dIv">JAN 2013</div></div> 
+        </div>
+        <div class="four fourx">
+            <img class="imG" src="http://themes.kadencethemes.com/virtue/wp-content/uploads/2013/07/ocean_02-270x270.jpg" alt="">
+            <a class="biao" href="">Lorem ipsum dolor sit.</a>
+            <img class="Img" src="css/three.png" alt="">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint vero nemo, ad ullam laborum libero, dolorem rem corporis eveniet repellendus amet dolore. <a href="">READ MORE</a></p>
+            <div class="Div"><div class="diV">29</div> <div class="dIv">JAN 2016</div></div> 
+        </div>
+        <div class="four foury">
+            <img class="imG" src="http://themes.kadencethemes.com/virtue/wp-content/uploads/2015/04/photo-1425100599170-85ec4f00a6ee-270x270.jpg" alt="">
+            <a class="biao" href="">Lorem ipsum dolor sit.</a>
+            <img class="Img" src="css/three.png" alt="">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint vero nemo, ad ullam laborum libero, dolorem rem corporis eveniet repellendus amet dolore. <a href="">READ MORE</a></p>
+            <div class="Div"><div class="diV">29</div> <div class="dIv">JAN 2015</div></div> 
+        </div>
+        </div>
+
+</div>
+<script>
+    var box = document.querySelector('.lunbo .box');
+    var span = document.querySelectorAll('.lunbo span');
+    var leftBtn = document.getElementsByTagName('button')[0];
+    var rightBtn = document.getElementsByTagName('button')[1];
+    var wid = 1140;
+    var obj = {
+        timer : 0,
+        n : 0
+    }
+    var count = 0;
+
+    // 让轮播图自动转，把setInterval放在函数里面是为了方便下面onmouseout再次让轮播图转起来
+    function auto() {
+        obj.timer =  setInterval(function () {
+            box.style.transform = 'translateX(-' + obj.n * wid +'px)';
+            dots();
+            obj.n ++;
+            count = 1;
+            if (obj.n == 3) {
+                obj.n = 0;
+            }
+        },2000);
+    }
+    auto();
+
+    // 鼠标移入自动转结束
+    box.onmouseover = function () {
+        clearInterval(obj.timer);
+    }
+
+    box.onmouseout = auto;//继续转
+
+    // 没想到当把button定位安在box上之后，box的onmouseover和onmouseout都没用了，感觉是因为创建了新的bfc的原因，所以下面就给两个button也加了这两个事件
+    leftBtn.onmouseover = function () {
+        clearInterval(obj.timer);
+    }
+
+    leftBtn.onmouseout = auto;//继续转
+    rightBtn.onmouseover = function () {
+        clearInterval(obj.timer);
+    }
+
+    rightBtn.onmouseout = auto;//继续转
+
+    // 让小圆点和图片一一对应
+    function dots() {
+        for(var b = 0; b < 3; b ++ ){
+            span[b].className = '';
+        }
+        span[obj.n].className = 'active';
+    }
+
+    // 给小圆点增加点击事件
+    for(let i = 0; i < span.length; i ++){
+        span[i].index = i;//加属性是为了避免闭包
+        console.log(span[i].index);
+        span[i].onclick = function () {
+            obj.n = this.index;
+            box.style.transform = 'translate(-' + wid * obj.n + 'px)';
+            dots();
+        };
+    }
+
+    // 给左边按钮增加事件
+    leftBtn.onclick = function () {
+        if (count == 1) {
+            count = 0;
+            obj.n --;
+            if (obj.n < 0){
+                obj.n = 2;
+            }
+        }
+        obj.n --;
+        if (obj.n < 0){
+            obj.n = 2;
+        }
+        box.style.transform = 'translate(-' + wid * obj.n +'px)';
+        dots();
+    }
+    // 给右边按钮增加事件
+    rightBtn.onclick = function () {
+        if (count == 1) {
+            count = 0; //判断是不是刚从自动循环结束，如果是直接结束，那就直接
+        }else{
+            obj.n ++;
+        }
+        if (obj.n == 3) {
+            obj.n = 0;
+        }
+        box.style.transform = 'translate(-' + wid * obj.n +'px)';
+        dots();
+    }
+</script>
+</body>
+</html>
